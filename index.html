@@ -20,13 +20,10 @@
         }
 
         main {
+            padding: 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
-            padding: 20px;
-            margin-left: 100px;
-            margin-right: 100px;
-            justify-content: space-around;
         }
 
         section {
@@ -34,6 +31,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            margin-bottom: 20px;
         }
 
         h2 {
@@ -70,6 +68,7 @@
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            width: 70%;
         }
 
         button {
@@ -80,12 +79,22 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
         .delete-button {
-            margin-left: auto; /* Push the delete button to the right */
             background-color: transparent;
             border: none;
             cursor: pointer;
             color: #000000;
+        }
+
+        @media only screen and (max-width: 600px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -136,7 +145,7 @@
     
     <center>
         <button onclick="clearAllTasks()" id="clear">Clear All</button>
-        <button onclick="saveToPDF()" style="text-align:right">Save to PDF</button>
+        <button onclick="saveToPDF()">Save to PDF</button>
     </center>
 
     <script>
